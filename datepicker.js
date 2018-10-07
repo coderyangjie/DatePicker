@@ -71,7 +71,7 @@
             //datepicker头部区
             '<a href="#" class="ui-datepicker-btn ui-datepicker-prev-btn">&lt;</a> '+
             '<a href="#" class="ui-datepicker-btn ui-datepicker-next-btn">&gt;</a> '+
-            '<span class="ui-datepicker-curr-month">' + monthData.year + '-' + monthData.month + '</span> '+
+            '<span class="ui-datepicker-curr-month">' + monthData.year + '-' + padding(monthData.month) + '</span> '+
             '</div> '+
             //datepicker主体区
             '<div class="ui-datepicker-body"> '+
@@ -225,18 +225,19 @@
     //日期格式化函数
     function format(date){
         var ret = '';
-        var padding = function(num){
-            if(num<=9){
-                return '0' + num;
-            }
-            return num;
-        }
-
         ret += date.getFullYear() + '-';
         ret += padding(date.getMonth() + 1) + '-';
         ret += padding(date.getDate());
 
         return ret;
+    }
+
+    //数字格式化
+    function padding(num){
+        if(num<=9){
+            return '0' + num;
+        }
+        return num;
     }
 
 
