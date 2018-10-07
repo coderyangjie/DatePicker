@@ -4,9 +4,24 @@
     <meta charset="UTF-8">
     <title>datepicker</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <style type="text/css">
+        .datepicker{
+            border:1px solid #ccc;
+            border-radius: 4px;
+            padding: 5px;
+            height: 24px;
+            line-height: 24px;
+            width:230px;
+        }
+        .datepicker:focus{
+            outline: 0 none;
+            border:1px solid #1abc9c;
+        }
+    </style>
 </head>
 <body>
-    <div class="ui-datepicker-wrapper">
+    <input type="text" class="datepicker">
+   <!-- <div class="ui-datepicker-wrapper">-->
         <!--datepicker头部区-->
        <!-- <div class="ui-datepicker-header">
             <a href="#" class="ui-datepicker-btn ui-datepicker-prev-btn">&lt;</a>
@@ -76,13 +91,13 @@
                </tbody>
            </table>
         </div>-->
-    </div>
+   <!-- </div>-->
 
     <script type="text/javascript" src="datepicker.js"></script>
     <script type="text/javascript">
         //var monthData = datepicker.getMonthData(2016,12);
         //console.log(monthData);
-        datepicker.init(document.querySelector('.ui-datepicker-wrapper'));
+        datepicker.init(".datepicker");
     </script>
 </body>
 </html>
